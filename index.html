@@ -30,7 +30,10 @@
   <label>
     <input type="radio" id="arr" name="arrdep" value="arr">Arrival
   </label>
-    
+<div class="radio">
+  <label>
+    <input type="radio" id="arr" name="arrdep" value="kord">KORD ATIS
+  </label>
 </div>
     </div>
   <div class="form-group form-group-lg">
@@ -42,23 +45,24 @@
     <div id = "alert"></div>
     
 </form>
-  <button class="btn btn-lg btn-success btn-block bottompad"><a href="https://webdatis.arinc.net/cgi-bin/datis/get_datis?station=kord&sessionId=Q9XAP2&products=DATIS&arrdep=dep">KORD ATIS</a></button>
     </div> <!-- /container -->
   
     </body>
     <script>
 function gotoURL(){
-    var arrdepval;
+    var url;
     
     if (document.getElementById("dep").checked === true){
-        var arrdepval = "dep";
+        var url = "https://webdatis.arinc.net/cgi-bin/datis/get_datis?station=" + icaovar2 + "&sessionId=Q9XAP2&products=DATIS&arrdep=dep"
     }
-        else{
-            var arrdepval = "arr";
-        };
+    else if (document.getElementByID("arr").checked === true) {
+         var url = "https://webdatis.arinc.net/cgi-bin/datis/get_datis?station=" + icaovar2 + "&sessionId=Q9XAP2&products=DATIS&arrdep=arr"
+    }
+    else {
+        var url = "https://webdatis.arinc.net/cgi-bin/datis/get_datis?station=kord&sessionId=Q9XAP2&products=DATIS&arrdep=dep"
+    };
     var icaovar = document.getElementById("icao").value;
     var icaovar2 = icaovar.toLowerCase().replace(/ /g,'');
-    var url = "https://webdatis.arinc.net/cgi-bin/datis/get_datis?station=" + icaovar2 + "&sessionId=Q9XAP2&products=DATIS&arrdep=" + arrdepval;
     if(icaovar2.length === 4){
     window.location.href=url;
     //document.getElementById('ga').innerHTML = '<a class="btn btn-success btn-lg btn-block" href="' + url + '">Get ATIS</a>';
