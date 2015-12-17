@@ -53,13 +53,13 @@ function gotoURL(){
     var url;
     
     if (document.getElementById("dep").checked === true){
-        var url = "https://webdatis.arinc.net/cgi-bin/datis/get_datis?station=" + icaovar2 + "&sessionId=Q9XAP2&products=DATIS&arrdep=dep"
+        var url = "https://webdatis.arinc.net/cgi-bin/datis/get_datis?station=" + icaovar2 + "&sessionId=Q9XAP2&products=DATIS&arrdep=dep";
     }
     else if (document.getElementByID("arr").checked === true) {
-         var url = "https://webdatis.arinc.net/cgi-bin/datis/get_datis?station=" + icaovar2 + "&sessionId=Q9XAP2&products=DATIS&arrdep=arr"
+         var url = "https://webdatis.arinc.net/cgi-bin/datis/get_datis?station=" + icaovar2 + "&sessionId=Q9XAP2&products=DATIS&arrdep=arr";
     }
     else {
-        var url = "https://webdatis.arinc.net/cgi-bin/datis/get_datis?station=kord&sessionId=Q9XAP2&products=DATIS&arrdep=dep"
+        var url = "https://webdatis.arinc.net/cgi-bin/datis/get_datis?station=kord&sessionId=Q9XAP2&products=DATIS&arrdep=dep";
     };
     var icaovar = document.getElementById("icao").value;
     var icaovar2 = icaovar.toLowerCase().replace(/ /g,'');
