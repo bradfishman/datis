@@ -57,7 +57,7 @@ function gotoURL(){
         };
     var icaovar = document.getElementById("icao").value;
     var icaovar2 = icaovar.toLowerCase().replace(/ /g,'');
-    var url = "https://webdatis.arinc.net/cgi-bin/datis/get_datis?station=" + icaovar2 + "&sessionId=Q9XAP2&products=DATIS&arrdep=" + arrdepval;
+    var url = "https://webdatis.arinc.net/cgi-bin/datis/get_datis?station=" + icaovar2 + "&sessionId=KXY9E2L&products=DATIS&arrdep=" + arrdepval;
     if(icaovar2.length === 4){
     window.location.href=url;
     //document.getElementById('ga').innerHTML = '<a class="btn btn-success btn-lg btn-block" href="' + url + '">Get ATIS</a>';
