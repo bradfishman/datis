@@ -44,12 +44,10 @@
     
 </form>
     </div> <!-- /container -->
-  <p id="replacethis"></p>
     </body>
     <script>
 function gotoURL(){
     var arrdepval;
-    var xhttp;
     if (document.getElementById("dep").checked === true){
         var arrdepval = "dep";
     }
@@ -59,9 +57,6 @@ function gotoURL(){
     var icaovar = document.getElementById("icao").value;
     var icaovar2 = icaovar.toLowerCase().replace(/ /g,'');
     var url = "https://webdatis.arinc.net/cgi-bin/datis/get_datis?station=" + icaovar2 + "&sessionId=KXY9E2L&products=DATIS&arrdep=" + arrdepval;
-    xhttp = new XMLHttpRequest();
-    var grabbedatis = xhttp.open("GET", url, true)
-    document.getElementById("replacethis").innerHTML = xhttp.responseText.$("pre:first")
     if(icaovar2.length === 4){
     window.location.href=url;
     //document.getElementById('ga').innerHTML = '<a class="btn btn-success btn-lg btn-block" href="' + url + '">Get ATIS</a>';
