@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="bootstrap.css" type="text/css" />
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -43,12 +44,12 @@
     
 </form>
     </div> <!-- /container -->
-  
+  <p id="replacethis"></p>
     </body>
     <script>
 function gotoURL(){
     var arrdepval;
-    
+    var xhttp;
     if (document.getElementById("dep").checked === true){
         var arrdepval = "dep";
     }
@@ -58,6 +59,9 @@ function gotoURL(){
     var icaovar = document.getElementById("icao").value;
     var icaovar2 = icaovar.toLowerCase().replace(/ /g,'');
     var url = "https://webdatis.arinc.net/cgi-bin/datis/get_datis?station=" + icaovar2 + "&sessionId=KXY9E2L&products=DATIS&arrdep=" + arrdepval;
+    xhttp = new XMLHttpRequest();
+    var grabbedatis = xhttp.open("GET", url, true)
+    document.getElementById("replacethis").innerHTML = xhttp.responseText.$("pre:first")
     if(icaovar2.length === 4){
     window.location.href=url;
     //document.getElementById('ga').innerHTML = '<a class="btn btn-success btn-lg btn-block" href="' + url + '">Get ATIS</a>';
