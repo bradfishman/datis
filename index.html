@@ -57,7 +57,7 @@
 
         var icaovar = document.getElementById("icao").value;
         var icaovar2 = icaovar.toLowerCase().replace(/ /g, '');
-        var url = "https://webdatis.arinc.net/cgi-bin/datis/get_datis?station=" + icaovar2 + "&sessionId=KXY9E2L&products=DATIS&arrdep=" + arrdepval;
+        var url = "https://vatisapi.radarcontact.me/datis.php?station=" + icaovar2 + "&arrdep" + arrdepval;
 
         if (icaovar2.length === 4) {
             document.getElementById('alert').innerHTML = '';
